@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body text-ink bg-cream antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display;
+}
+
+/* Foco visível para navegação por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ffc933;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respeita usuários que preferem menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Scrollbar discreta no carrinho */
+.scroll-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #d19ee6;
+  border-radius: 999px;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+.section-heading {
+  @apply text-3xl sm:text-4xl font-display font-700 text-acai-900;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-sun-500 px-6 py-3.5
+    font-display font-600 text-acai-950 shadow-card transition-transform duration-150
+    hover:bg-sun-400 active:scale-95;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/80
+    bg-white/10 px-6 py-3.5 font-display font-600 text-white backdrop-blur-sm transition-colors
+    duration-150 hover:bg-white/20 active:scale-95;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-acai-200 bg-white px-4 py-2.5 font-body text-sm text-ink
+    placeholder:text-ink/40 focus:border-acai-500 focus:outline-none;
+}
+
+.btn-whatsapp {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-leaf-500 px-5 py-3
+    font-display font-600 text-white shadow-card transition-transform duration-150
+    hover:bg-leaf-700 active:scale-95;
+}
